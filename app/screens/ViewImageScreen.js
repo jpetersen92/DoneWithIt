@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, View, StyleSheet } from 'react-native';
+import {} from '@expo/vector-icons'
 
 import colors from '../config/colors';
 
