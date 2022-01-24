@@ -2,6 +2,7 @@ import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 
 import ListItem from '../components/ListItem';
+import ListItemDeleteAction from '../components/ListItemDeleteAction';
 import ListItemSeparator from '../components/ListItemSeparator';
 import Screen from '../components/Screen';
 
@@ -26,11 +27,15 @@ function MessagesScreen(props) {
             <FlatList 
                 data={messages}
                 keyExtractor={message => message.id.toString()}
-                renderItem={({item}) => <ListItem 
-                    title={item.title}
-                    subTitle={item.description}
-                    image={item.image}
-                />}
+                renderItem={({item}) => (
+                    <ListItem 
+                        title={item.title}
+                        subTitle={item.description}
+                        image={item.image}
+                        onPress={() => console.log('message selected', item)}
+                        renderRightActions={ListItemDeleteAction}
+                    />
+                )}
                 ItemSeparatorComponent={ListItemSeparator}
             />
         </Screen>
