@@ -20,6 +20,9 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
     },
+    detailsContainer: {
+        justifyContent: 'center'
+    },
     image: {
         width: 70,
         height: 70,
