@@ -11,6 +11,7 @@ import ListingsScreen from './app/screens/ListingsScreen';
 import Screen from './app/components/Screen';
 import AppTextInput from './app/components/AppTextInput';
 import AppPicker from './app/components/AppPicker';
+import LoginScreen from './app/screens/LoginScreen';
 
 export default function App() {
   return (
@@ -20,9 +21,6 @@ export default function App() {
     // <MessagesScreen />
     // <MyAccountScreen />
     // <ListingsScreen />
-    <Screen>
-      <AppPicker icon='apps' placeholder='Category'/>
-      <AppTextInput icon='email' placeholder='Email'/>
-    </Screen>
+    <LoginScreen />
   );
 }
