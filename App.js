@@ -12,6 +12,7 @@ import Screen from './app/components/Screen';
 import AppTextInput from './app/components/AppTextInput';
 import AppPicker from './app/components/AppPicker';
 import LoginScreen from './app/screens/LoginScreen';
+import RegisterScreen from './app/screens/RegisterScreen';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
     // <MessagesScreen />
     // <MyAccountScreen />
     // <ListingsScreen />
-    <LoginScreen />
+    // <LoginScreen />
+    <RegisterScreen />
   );
 }
