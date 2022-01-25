@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Switch, View } from 'react-native';
 
 
 import ViewImageScreen from './app/screens/ViewImageScreen';
@@ -10,6 +10,7 @@ import MyAccountScreen from './app/screens/MyAccountScreen';
 import ListingsScreen from './app/screens/ListingsScreen';
 import Screen from './app/components/Screen';
 import AppTextInput from './app/components/AppTextInput';
+import AppPicker from './app/components/AppPicker';
 
 export default function App() {
   return (
@@ -20,7 +21,8 @@ export default function App() {
     // <MyAccountScreen />
     // <ListingsScreen />
     <Screen>
-      <AppTextInput placeholder='Username' icon='email'/>
+      <AppPicker icon='apps' placeholder='Category'/>
+      <AppTextInput icon='email' placeholder='Email'/>
     </Screen>
   );
 }
