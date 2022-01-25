@@ -20,11 +20,11 @@ export default function App() {
     // <ListingDetailsScreen />
     // <WelcomeScreen />
     // <ViewImageScreen />
-    // <MessagesScreen />
+    <MessagesScreen />
     // <MyAccountScreen />
     // <ListingsScreen />
     // <LoginScreen />
     // <RegisterScreen />
-    <ListingEditScreen />
+    // <ListingEditScreen />
   );
 }
