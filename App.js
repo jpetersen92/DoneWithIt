@@ -1,5 +1,5 @@
-import React from 'react';
-import { Switch, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import * as ImagePicker from 'expo-image-picker';
 
 
 import ViewImageScreen from './app/screens/ViewImageScreen';
@@ -14,6 +14,8 @@ import AppPicker from './app/components/AppPicker';
 import LoginScreen from './app/screens/LoginScreen';
 import RegisterScreen from './app/screens/RegisterScreen';
 import ListingEditScreen from './app/screens/ListingEditScreen';
+import ImageInput from './app/components/ImageInput';
+import ImageInputList from './app/components/ImageInputList';
 
 export default function App() {
   return (
