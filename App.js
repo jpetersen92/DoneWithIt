@@ -1,32 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import * as ImagePicker from 'expo-image-picker';
+import React  from 'react';
+import { Button, Text } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-
-import ViewImageScreen from './app/screens/ViewImageScreen';
-import WelcomeScreen from './app/screens/WelcomeScreen';
-import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
-import MessagesScreen from './app/screens/MessagesScreen';
-import MyAccountScreen from './app/screens/MyAccountScreen';
-import ListingsScreen from './app/screens/ListingsScreen';
 import Screen from './app/components/Screen';
-import AppTextInput from './app/components/AppTextInput';
-import AppPicker from './app/components/AppPicker';
+import AuthNavigator from './app/navigation/AuthNavigator';
+import WelcomeScreen from './app/screens/WelcomeScreen';
 import LoginScreen from './app/screens/LoginScreen';
 import RegisterScreen from './app/screens/RegisterScreen';
-import ListingEditScreen from './app/screens/ListingEditScreen';
-import ImageInput from './app/components/ImageInput';
-import ImageInputList from './app/components/ImageInputList';
+
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    // <ListingDetailsScreen />
-    // <WelcomeScreen />
-    // <ViewImageScreen />
-    // <MessagesScreen />
-    // <MyAccountScreen />
-    // <ListingsScreen />
-    // <LoginScreen />
-    // <RegisterScreen />
-    <ListingEditScreen />
+    <NavigationContainer>
+      <AuthNavigator />
+    </NavigationContainer>
   );
 }
