@@ -5,11 +5,11 @@ import { Image } from 'react-native-expo-image-cache'
 import colors from '../config/colors';
 import AppText from './AppText';
 
-function Card({title, subTitle, imageUrl, onPress}) {
+function Card({title, subTitle, imageUrl, onPress, thumbnailUrl}) {
     return (
         <TouchableWithoutFeedback onPress={onPress}>
             <View style={styles.card}>
-                <Image uri={imageUrl} style={styles.image}/>
+                <Image uri={imageUrl} tint='light' preview={{uri: thumbnailUrl}} style={styles.image}/>
                 <View style={styles.detailsContainer}>
                 <AppText style={styles.title} numberOfLines={1}>{title}</AppText>
                 <AppText style={styles.subTitle} numberOfLines={2}>{subTitle}</AppText>
