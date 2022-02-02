@@ -1,6 +1,7 @@
 import apiClient from "./client";
 
 const endpoint = '/listings'
+
 const getListings = () => apiClient.get(endpoint)
 
 const addListing = (listing, onUploadProgress) => {
@@ -16,6 +17,7 @@ const addListing = (listing, onUploadProgress) => {
             type: 'image/jpeg',
             uri: image
         }));
+
 
     if (listing.location)
         data.append('location', JSON.stringify(listing.location))

@@ -16,6 +16,7 @@ function ListingsScreen({ navigation }) {
 
     const { request: loadListings, data: listings, error, loading } = useApi(listingsApi.getListings);
 
+    
     useEffect(() => {
         loadListings();
     }, []);

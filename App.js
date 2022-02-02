@@ -1,18 +1,32 @@
 import React  from 'react';
-import { Button, Text } from 'react-native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import AsyncStorage from '@react-native-async-storage/async-storage'
+
 
 import AppNavigator from './app/navigation/AppNavigator';
-import AuthNavigator from './app/navigation/AuthNavigator';
 import navigationTheme from './app/navigation/navigationTheme';
 
 
 export default function App() {
+
+  const demo = async () => {
+    try {
+      await AsyncStorage.setItem('person', JSON.stringify({ id: 1 }))
+      const value = await AsyncStorage.getItem('person');
+      const person = JSON.parse(value)
+      console.log(person)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  demo();
+  
+
   return (
     <NavigationContainer theme={navigationTheme}>
       <AppNavigator />
     </NavigationContainer>
+
   );
 }
