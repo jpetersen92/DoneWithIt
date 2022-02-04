@@ -34,6 +34,7 @@ const getUser = async () =>{
 
 export default {
     getUser,
+    getToken,
     storeToken,
     removeToken,
 }
