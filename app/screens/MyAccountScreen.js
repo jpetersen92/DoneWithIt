@@ -31,7 +31,7 @@ function myAccountScreen({ navigation }) {
     return (
         <Screen style={styles.screen}>
             <View style={styles.container}>
-            <ListItem image={require('../assets/mosh.jpg')} title={user.name} subTitle={user.email}/>
+            <ListItem image={require('../assets/josh.png')} title={user.name} subTitle={user.email}/>
             </View>
 
             <View style={styles.container}>
