@@ -1,30 +1,37 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, KeyboardAvoidingView, Platform, Keyboard } from 'react-native';
 import { Image } from 'react-native-expo-image-cache';
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 import AppText from '../components/AppText';
 import colors from '../config/colors';
 import ListItem from '../components/lists/ListItem';
+import ContactSellerForm from '../components/ContactSellerForm';
 
 function ListingDetailsScreen({ route }) {
 
     const listing = route.params
 
     return (
-        <View>
+        <KeyboardAvoidingView
+        behavior="position"
+        keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 100}
+        >
+            
             <Image uri={listing.images[0].url} tint='light' preview={{uri: listing.images[0].thumbnailUrl}} style={styles.image}/>
             <View style={styles.detailsContainer}>
                 <AppText style={styles.title}>{listing.title}</AppText>
                 <AppText style={styles.price}>${listing.price}</AppText>
+                <View style={styles.userContainer}>
+                    <ListItem 
+                        image={require('../assets/josh.png')}
+                        title='Josh Petersen'
+                        subTitle='5 Listings'
+                        />
+                </View>
+                <ContactSellerForm  />
             </View>
-            <View style={styles.userContainer}>
-                <ListItem 
-                    image={require('../assets/josh.png')}
-                    title='Josh Petersen'
-                    subTitle='5 Listings'
-                />
-            </View>
-        </View>
+        </KeyboardAvoidingView>
     );
 }
 
@@ -45,9 +52,6 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontWeight: '500'
-    },
-    userContainer: {
-        marginVertical: 40
     }
 })
 
